@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="SampleDbModel.Negara" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <AssociationConnector Association="SampleDbModel.FK_Kota_Negara" ManuallyRouted="false" />
         <AssociationConnector Association="SampleDbModel.FK_Mahasiswa_Kota" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SampleDbModel.Pengguna" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

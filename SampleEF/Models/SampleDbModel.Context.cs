@@ -28,5 +28,6 @@ namespace SampleEF.Models
         public virtual DbSet<Kota> Kotas { get; set; }
         public virtual DbSet<Mahasiswa> Mahasiswas { get; set; }
         public virtual DbSet<Negara> Negaras { get; set; }
+        public virtual DbSet<Pengguna> Penggunas { get; set; }
     }
 }

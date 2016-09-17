@@ -1,32 +1,23 @@
 ﻿@model IEnumerable<SampleEF.Models.Negara>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SamplePaging";
 }
 
-<h2>Daftar Negara</h2>
-<br />
-<form method="get" action="@Url.Action("Index")">
-    <fieldset>
-        Cari Negara :
-        <input type="text" name="keyword" placeholder="masukan nama negara" />
-        <input type="submit" value="Submit" class="btn btn-success" /> 
-    </fieldset>
-</form>
-<br/>
-@if(ViewBag.Username!=null)
-{
-    <p>Selamat datang, @ViewBag.Username</p>
-}
+@using X.PagedList.Mvc;
+@using X.PagedList;
+<link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
-<br />
+
+<h2>Sample Paging</h2>
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table table-striped">
+<table class="table">
     <tr>
         <th>
-            Nama Negara
+            @Html.DisplayNameFor(model => model.NamaNegara)
         </th>
         <th></th>
     </tr>
@@ -43,5 +34,6 @@
         </td>
     </tr>
 }
-
 </table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("SamplePaging", new { page }))

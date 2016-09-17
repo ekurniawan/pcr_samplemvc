@@ -31,6 +31,14 @@
           <Property Name="NegaraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NamaNegara" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Pengguna">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Kota_Negara">
           <End Role="Negara" Type="Self.Negara" Multiplicity="1" />
           <End Role="Kota" Type="Self.Kota" Multiplicity="*" />
@@ -59,6 +67,7 @@
           <EntitySet Name="Kota" EntityType="Self.Kota" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mahasiswa" EntityType="Self.Mahasiswa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Negara" EntityType="Self.Negara" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pengguna" EntityType="Self.Pengguna" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Kota_Negara" Association="Self.FK_Kota_Negara">
             <End Role="Negara" EntitySet="Negara" />
             <End Role="Kota" EntitySet="Kota" />
@@ -138,7 +147,16 @@
             <End Role="Kota" EntitySet="Kotas" />
             <End Role="Mahasiswa" EntitySet="Mahasiswas" />
           </AssociationSet>
+          <EntitySet Name="Penggunas" EntityType="SampleDbModel.Pengguna" />
         </EntityContainer>
+        <EntityType Name="Pengguna">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -171,6 +189,15 @@
               <MappingFragment StoreEntitySet="Negara">
                 <ScalarProperty Name="NegaraId" ColumnName="NegaraId" />
                 <ScalarProperty Name="NamaNegara" ColumnName="NamaNegara" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Penggunas">
+            <EntityTypeMapping TypeName="SampleDbModel.Pengguna">
+              <MappingFragment StoreEntitySet="Pengguna">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

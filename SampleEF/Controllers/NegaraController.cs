@@ -7,15 +7,40 @@ using System.Web.Mvc;
 using SampleEF.Models;
 using SampleEF.DAL;
 
+using X.PagedList;
+
 namespace SampleEF.Controllers
 {
     public class NegaraController : Controller
     {
+
+        public ActionResult SamplePaging(int? page)
+        {
+            NegaraDAL negaraDal = new NegaraDAL();
+            var results = negaraDal.GetAll();
+            var pageNumber = page ?? 1;
+            var ListNegara = results.ToPagedList(pageNumber, 3);
+            //ViewBag.ListNegara = ListNegara;
+            return View(ListNegara);
+        }
+
         // GET: Negara
         public ActionResult Index(string keyword = "")
         {
-            NegaraDAL negaraDal = new NegaraDAL();
-            return View(negaraDal.GetAll(keyword));
+            string username;
+            if(Session["username"]!=null)
+            {
+                username = Session["username"].ToString();
+                NegaraDAL negaraDal = new NegaraDAL();
+                ViewBag.Username = username;
+                return View(negaraDal.GetAll(keyword));
+            }
+            else
+            {
+                return RedirectToAction("LoginUser", "Login");
+            }
+
+           
         }
 
         // GET: Negara/Details/5
