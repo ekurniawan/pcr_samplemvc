@@ -203,6 +203,7 @@
     <Compile Include="Controllers\NegaraController.cs" />
     <Compile Include="DAL\IMasterClass.cs" />
     <Compile Include="DAL\KotaDAL.cs" />
+    <Compile Include="DAL\MahasiswaDAL.cs" />
     <Compile Include="DAL\NegaraDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
