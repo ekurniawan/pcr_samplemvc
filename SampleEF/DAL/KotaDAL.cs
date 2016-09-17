@@ -9,10 +9,26 @@ namespace SampleEF.DAL
 {
     public class KotaDAL : IMasterClass<Kota>
     {
+        private SampleDbEntities db;
+
+        public KotaDAL()
+        {
+            db = new SampleDbEntities();
+        }
+
         public void Delete(Kota obj)
         {
             //implementasi delete
             throw new NotImplementedException();
+        }
+
+        public IQueryable<Kota> GetAll()
+        {
+            var results = from k in db.Kotas.Include("Negara")
+                          orderby k.NamaKota
+                          select k;
+
+            return results;
         }
 
         public IQueryable<Kota> GetAll(string keyword)

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SampleEF.Models.Kota>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID Negara
+        </th>
+        <th>
+            Nama Kota
+        </th>
+        <th>
+            Nama Negara
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NegaraId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Negara.NamaNegara)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KotaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KotaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KotaId })
+        </td>
+    </tr>
+}
+
+</table>
