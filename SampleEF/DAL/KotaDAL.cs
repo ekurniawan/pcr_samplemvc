@@ -11,6 +11,7 @@ namespace SampleEF.DAL
     {
         public void Delete(Kota obj)
         {
+            //implementasi delete
             throw new NotImplementedException();
         }
 
