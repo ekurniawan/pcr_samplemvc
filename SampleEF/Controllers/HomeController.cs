@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using MyDAL;
+
 namespace SampleEF.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
+            MyCustonClass myClass = new MyCustonClass();
             return View();
         }
 

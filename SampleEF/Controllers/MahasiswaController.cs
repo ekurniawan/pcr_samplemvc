@@ -14,6 +14,9 @@ namespace SampleEF.Controllers
         // GET: Mahasiswa
         public ActionResult Index()
         {
+            if (Session["username"] == null)
+                return RedirectToAction("Login", "Pengguna");
+
             MahasiswaDAL mhsDal = new MahasiswaDAL();
             return View(mhsDal.GetAll());
         }

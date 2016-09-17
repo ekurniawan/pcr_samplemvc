@@ -213,10 +213,12 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyRoleController.cs" />
     <Compile Include="Controllers\NegaraController.cs" />
+    <Compile Include="Controllers\PenggunaController.cs" />
     <Compile Include="DAL\IMasterClass.cs" />
     <Compile Include="DAL\KotaDAL.cs" />
     <Compile Include="DAL\MahasiswaDAL.cs" />
     <Compile Include="DAL\NegaraDAL.cs" />
+    <Compile Include="DAL\PenggunaDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -343,6 +345,9 @@
     <Content Include="Views\Mahasiswa\Index.cshtml" />
     <Content Include="Views\Negara\SamplePaging.cshtml" />
     <Content Include="Views\Login\LoginUser.cshtml" />
+    <Content Include="Views\Pengguna\Index.cshtml" />
+    <Content Include="Views\Pengguna\Registrasi.cshtml" />
+    <Content Include="Views\Pengguna\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +363,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyDAL\MyDAL.csproj">
+      <Project>{f6ff885b-09c2-4d36-8e3b-52fff7afc7f7}</Project>
+      <Name>MyDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
