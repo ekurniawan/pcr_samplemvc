@@ -33,6 +33,7 @@ namespace SampleEF.DAL
 
         public IQueryable<Kota> GetAll(string keyword)
         {
+            //keterangan
             throw new NotImplementedException();
         }
 
