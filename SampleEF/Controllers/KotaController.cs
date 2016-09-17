@@ -9,9 +9,11 @@ using SampleEF.DAL;
 
 namespace SampleEF.Controllers
 {
+    [Authorize]
     public class KotaController : Controller
     {
         // GET: Kota
+        [Authorize(Users = "erick@actual-training.com")]
         public ActionResult Index()
         {
             KotaDAL kotaDal = new KotaDAL();

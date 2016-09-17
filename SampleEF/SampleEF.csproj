@@ -211,6 +211,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MahasiswaController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyRoleController.cs" />
     <Compile Include="Controllers\NegaraController.cs" />
     <Compile Include="DAL\IMasterClass.cs" />
     <Compile Include="DAL\KotaDAL.cs" />
@@ -219,6 +220,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Enkripsi.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Kota.cs">
@@ -344,6 +346,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MyRole\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
