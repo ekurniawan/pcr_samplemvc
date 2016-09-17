@@ -22,6 +22,7 @@
           <Property Name="Alamat" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IPK" Type="float" Nullable="false" />
           <Property Name="KotaId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Negara">
           <Key>
@@ -91,6 +92,7 @@
           <Property Name="IPK" Type="Double" Nullable="false" />
           <Property Name="KotaId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Kota" Relationship="Self.FK_Mahasiswa_Kota" FromRole="Mahasiswa" ToRole="Kota" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Negara">
           <Key>
@@ -155,6 +157,7 @@
           <EntitySetMapping Name="Mahasiswas">
             <EntityTypeMapping TypeName="SampleDbModel.Mahasiswa">
               <MappingFragment StoreEntitySet="Mahasiswa">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Nim" ColumnName="Nim" />
                 <ScalarProperty Name="Nama" ColumnName="Nama" />
                 <ScalarProperty Name="Alamat" ColumnName="Alamat" />

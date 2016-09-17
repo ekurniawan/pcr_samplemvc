@@ -19,6 +19,7 @@ namespace SampleEF.Models
         public string Alamat { get; set; }
         public double IPK { get; set; }
         public int KotaId { get; set; }
+        public string Email { get; set; }
     
         public virtual Kota Kota { get; set; }
     }
